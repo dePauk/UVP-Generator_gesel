@@ -52,8 +52,6 @@ import random
 
 
 
-
-
 def nakljucno_geslo(dolzina,zapis):
     geslo = []
     for i in range(dolzina):
@@ -71,10 +69,39 @@ def nakljucno_geslo(dolzina,zapis):
 
 
 
-dolz = int(input("Koliko znakov naj vsebuje geslo? "))
-kodir = int(input("V katerem zapisu želiš geslo? "))
+def program():
 
-print (nakljucno_geslo(dolz, kodir))
+    zelja = input("Kaj želiš (geslo)? ")
+    if zelja == "geslo":
+        dolz = int(input("Koliko znakov naj vsebuje geslo? "))
+        kodir = int(input("V katerem zapisu želiš geslo? "))
+        print ("\n" + nakljucno_geslo(dolz, kodir)+ "\n")
+        program()
+    else:
+        print ("Napaka." + "\n")
+        program()
+
+program()
+
+    
+#zelja = int(input("Kaj želiš? 1- izpis gesla, 2- izvoz seznama gesel. "))
+#
+#    
+#if zelja == 1:
+#    print (nakljucno_geslo(dolz, kodir))
+#elif zelja == 2:
+#    with open(seznam_gesel, "w") as f:
+#        print (nakljucno_geslo(dolz, kodir))
+#else:
+#    print ("Napaka.")
+        
+
+
+    
+    
+
+
+
 
 
 
