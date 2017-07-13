@@ -74,8 +74,16 @@ def program():
     zelja = input("Kaj želiš (geslo)? ")
     if zelja == "geslo":
         dolz = int(input("Koliko znakov naj vsebuje geslo? "))
-        kodir = int(input("V katerem zapisu želiš geslo? "))
+        kodir = int(input("V katerem zapisu želiš geslo (0- cifre, 1- male črke, 2- mešane črke, 3- poljubno)? "))
         print ("\n" + nakljucno_geslo(dolz, kodir)+ "\n")
+        if kodir == 0:
+            print (round((10 ** (dolz-1)/1000000)/(3600*24),1), "dni minimum Hack time per 1.000.000/s")
+        elif kodir == 1:
+            print (round((26 ** (dolz-1)/1000000)/(3600*24),1), "dni minimum Hack time per 1.000.000/s")
+        elif kodir == 2:
+            print (round((52 ** (dolz-1)/1000000)/(3600*24),1), "dni minimum Hack time per 1.000.000/s")
+        elif kodir == 3:
+            print (round((62 ** (dolz-1)/1000000)/(3600*24),1), "dni minimum Hack time per 1.000.000/s")
         program()
     else:
         print ("Napaka." + "\n")
@@ -83,18 +91,7 @@ def program():
 
 program()
 
-    
-#zelja = int(input("Kaj želiš? 1- izpis gesla, 2- izvoz seznama gesel. "))
-#
-#    
-#if zelja == 1:
-#    print (nakljucno_geslo(dolz, kodir))
-#elif zelja == 2:
-#    with open(seznam_gesel, "w") as f:
-#        print (nakljucno_geslo(dolz, kodir))
-#else:
-#    print ("Napaka.")
-        
+
 
 
     
