@@ -77,13 +77,13 @@ def program():
         kodir = int(input("V katerem zapisu želiš geslo (0- cifre, 1- male črke, 2- mešane črke, 3- poljubno)? "))
         print ("\n" + nakljucno_geslo(dolz, kodir)+ "\n")
         if kodir == 0:
-            print (round((10 ** (dolz-1)/1000000)/(3600*24),1), "dni minimum Hack time per 1.000.000/s")
+            print (round((10 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s")
         elif kodir == 1:
-            print (round((26 ** (dolz-1)/1000000)/(3600*24),1), "dni minimum Hack time per 1.000.000/s")
+            print (round((26 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s")
         elif kodir == 2:
-            print (round((52 ** (dolz-1)/1000000)/(3600*24),1), "dni minimum Hack time per 1.000.000/s")
+            print (round((52 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s")
         elif kodir == 3:
-            print (round((62 ** (dolz-1)/1000000)/(3600*24),1), "dni minimum Hack time per 1.000.000/s")
+            print (round((62 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s")
         program()
     else:
         print ("Napaka." + "\n")
