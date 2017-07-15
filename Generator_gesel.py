@@ -64,6 +64,7 @@ def nakljucno_geslo(dolzina,zapis):
                 i = random.choice("abcdefghijklmnopqrstuvwxwzABCDEFGHIJKLMNOPQRSTUVWXYZ")
         elif zapis == 3:
                 i = random.choice("0123456789abcdefghijklmnopqrstuvwxwzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+           
         geslo.append(i)
     return "".join(geslo)
 
@@ -71,25 +72,33 @@ def nakljucno_geslo(dolzina,zapis):
 
 def program():
 
-    zelja = input("Kaj želiš (geslo)? ")
+    zelja = input("Kaj želiš (geslo)?" + "\n")
     if zelja == "geslo":
-        dolz = int(input("Koliko znakov naj vsebuje geslo? "))
-        kodir = int(input("V katerem zapisu želiš geslo (0- cifre, 1- male črke, 2- mešane črke, 3- poljubno)? "))
+        dolz = int(input("Koliko znakov naj vsebuje geslo? " + "\n"))
+        if dolz < 4 or dolz > 128:
+            print ("Napaka. Geslo mora vsebovati med 4 in 128 znakov." + "\n")
+            program()
+        kodir = int(input("V katerem zapisu želiš geslo (0- cifre, 1- male črke, 2- mešane črke, 3- poljubno)? " + "\n"))
+        if kodir != 0 and kodir != 1 and kodir != 2 and kodir != 3:
+            print ("Napaka. Izbran mora biti način zapisa 0, 1, 2 ali 3." + "\n")
+            program()
+            
         print ("\n" + nakljucno_geslo(dolz, kodir)+ "\n")
         if kodir == 0:
-            print (round((10 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s")
+            print (round((10 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s" + "\n")
         elif kodir == 1:
-            print (round((26 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s")
+            print (round((26 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s" + "\n")
         elif kodir == 2:
-            print (round((52 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s")
+            print (round((52 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s" + "\n")
         elif kodir == 3:
-            print (round((62 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s")
+            print (round((62 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s" + "\n")
         program()
     else:
         print ("Napaka." + "\n")
         program()
 
 program()
+
 
 
 
