@@ -1,3 +1,4 @@
+
 import random
 import tkinter as tk
 
@@ -50,12 +51,7 @@ import tkinter as tk
 #
 #print (d.doloci_geslo)
 
-okno = tk.Tk()
-gumb = tk.Button(okno, text = "Generiraj geslo")
 
-gumb.pack()
-
-okno.mainloop()
 
 def nakljucno_geslo(dolzina,zapis):
     geslo = []
@@ -117,12 +113,36 @@ def program():
             print (round((52 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s" + "\n")
         elif kodir == 3:
             print (round((62 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s" + "\n")
-        program()
+        #program()
     else:
         print ("Napaka." + "\n")
         program()
 
-program()
+        
+def generiraj():
+    program()
+
+
+okno = tk.Tk()
+
+zgoraj = tk.Frame(okno)
+zgoraj.pack()
+spodaj = tk.Frame(okno)
+spodaj.pack()
+zapis0 = tk.Button(zgoraj, text = "Samo cifre").grid(row=0, column=0)
+zapis1 = tk.Button(zgoraj, text = "Male črke").grid(row=0, column=1)
+zapis2 = tk.Button(zgoraj, text = "Mešane črke").grid(row=0, column=2)
+zapis3 = tk.Button(zgoraj, text = "Mešane črke + cifre").grid(row=0, column=3)
+
+gumb_generiraj = tk.Button(okno, text = "Generiraj geslo", command = generiraj).pack()
+
+
+
+
+
+#program()
+
+
 
 
 
