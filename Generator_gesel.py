@@ -68,12 +68,18 @@ def osvezi_prikaz():
 
 def povecaj_dolzino():
     global trenutna_dolzina
-    trenutna_dolzina += 1
+    if trenutna_dolzina == 32:
+        pass
+    else:
+        trenutna_dolzina += 1
     osvezi_prikaz()
 
 def zmanjsaj_dolzino():
     global trenutna_dolzina
-    trenutna_dolzina -= 1
+    if trenutna_dolzina == 4:
+        pass
+    else:
+        trenutna_dolzina -= 1
     osvezi_prikaz()
 
     
@@ -102,6 +108,21 @@ def zapis_tk3():
 
 def osvezi_prikaz_zapisa():
     kateri_zapis["text"] = str(zapis_tk)
+
+
+generirano_geslo = "test"
+
+def osvezi_geslo():
+    izpis["text"] = str(generirano_geslo)
+
+def novo_geslo_tk():
+    global generirano_geslo
+    global izpisano_geslo
+    izpisano_geslo = generirano_geslo
+    osvezi_geslo()
+    
+    
+    
 
 
 ########################################################
@@ -147,7 +168,9 @@ def program_tk():
                         
         #print ("\n" + nakljucno_geslo(dolz_tk, kodir_tk)+ "\n")
     generirano_geslo = nakljucno_geslo_tk(dolz_tk, kodir_tk)
+    global generirano_geslo
     print (generirano_geslo)
+    
     
     if kodir_tk == 0:
         #print (round((10 ** dolz/(2*1000000000)/(3600*24)),1), "dni minimum Hack time per 1000 million/s" + "\n")
@@ -212,8 +235,9 @@ osvezi_prikaz()
 spodaj = tk.Frame(okno)
 spodaj.pack()
 
-izpis = tk.Frame()
+izpis = tk.Label(okno)
 izpis.pack()
+osvezi_geslo()
 
 
 zapis_naslova = tk.Label(naslov, text = "Nastavite željene vrednosti:").pack()
@@ -229,7 +253,7 @@ minus_gumb = tk.Button(stevilo_znakov, text = "-", command=zmanjsaj_dolzino).gri
 
 gumb_generiraj = tk.Button(spodaj, text = "Generiraj geslo", command = generiraj).pack()
 
-izpis_gesla = tk.Label(izpis, text = zapis_tk).pack()
+izpis_gesla = tk.Label(izpis, text= izpisano_geslo).pack()
 
 
 
