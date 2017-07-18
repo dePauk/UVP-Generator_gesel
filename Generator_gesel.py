@@ -190,19 +190,28 @@ okno = tk.Tk()
 naslov = tk.Frame(okno)
 naslov.pack()
 
+preglednost0 = tk.Label(okno)
+preglednost0.pack()
+
 izbor_zapisa = tk.Frame(okno)
 izbor_zapisa.pack()
 
-kateri_zapis = tk.Label(okno, bg = "white")
+kateri_zapis = tk.Label(okno, font = ("TkDefaultFont", 12), bg = "white")
 kateri_zapis.pack()
 osvezi_prikaz_zapisa()
+
+preglednost1 = tk.Label(okno)
+preglednost1.pack()
 
 stevilo_znakov = tk.Frame(okno)
 stevilo_znakov.pack()
 
-prikaz_dolzine = tk.Label(okno, bg = "white")
+prikaz_dolzine = tk.Label(okno, font = ("TkDefaultFont", 12), bg = "white")
 prikaz_dolzine.pack()
 osvezi_prikaz()
+
+preglednost2 = tk.Label(okno)
+preglednost2.pack()
 
 spodaj = tk.Frame(okno)
 spodaj.pack()
@@ -211,27 +220,35 @@ izpis = tk.Label(okno, bg = "white", font = ("Courier", 16))
 izpis.pack()
 osvezi_geslo()
 
-prikaz_varnosti_gesla = tk.Label(okno, fg = "blue")
+preglednost3 = tk.Label(okno)
+preglednost3.pack()
+
+spodaj2 = tk.Frame(okno)
+spodaj2.pack()
+
+
+
+prikaz_varnosti_gesla = tk.Label(okno, font = ("TkDefaultFont", 12), fg = "blue")
 prikaz_varnosti_gesla.pack()
 osvezi_varnost()
 
 
 
-zapis_naslova = tk.Label(naslov, text = "Nastavite željene vrednosti:").pack()
+zapis_naslova = tk.Label(naslov, font = ("TkDefaultFont", 13), text = "Nastavite željene vrednosti:").pack()
 
-zapis0 = tk.Button(izbor_zapisa, text = "Samo cifre", command=zapis_tk0).grid(row=0, column=0)
-zapis1 = tk.Button(izbor_zapisa, text = "Male črke", command=zapis_tk1).grid(row=0, column=1)
-zapis2 = tk.Button(izbor_zapisa, text = "Mešane črke", command=zapis_tk2).grid(row=0, column=2)
-zapis3 = tk.Button(izbor_zapisa, text = "Mešane črke + cifre", command=zapis_tk3).grid(row=0, column=3)
+zapis0 = tk.Button(izbor_zapisa, font = ("TkDefaultFont", 11), text = "Samo cifre", command=zapis_tk0).grid(row=0, column=0)
+zapis1 = tk.Button(izbor_zapisa, font = ("TkDefaultFont", 11), text = "Male črke", command=zapis_tk1).grid(row=0, column=1)
+zapis2 = tk.Button(izbor_zapisa, font = ("TkDefaultFont", 11), text = "Mešane črke", command=zapis_tk2).grid(row=0, column=2)
+zapis3 = tk.Button(izbor_zapisa, font = ("TkDefaultFont", 11), text = "Mešane črke + cifre", command=zapis_tk3).grid(row=0, column=3)
 
-zapis_za_dolzino = tk.Label(stevilo_znakov, text = "Število znakov:  ").grid(row=0, column=0)
-plus_gumb = tk.Button(stevilo_znakov, text = "+", command=povecaj_dolzino).grid(row=0, column=1)
-minus_gumb = tk.Button(stevilo_znakov, text = "-", command=zmanjsaj_dolzino).grid(row=0, column=2)
+zapis_za_dolzino = tk.Label(stevilo_znakov, font = ("TkDefaultFont", 11), text = "Število znakov:  ").grid(row=0, column=0)
+plus_gumb = tk.Button(stevilo_znakov, font = ("TkDefaultFont", 11), text = "+", command=povecaj_dolzino).grid(row=0, column=1)
+minus_gumb = tk.Button(stevilo_znakov, font = ("TkDefaultFont", 11), text = "-", command=zmanjsaj_dolzino).grid(row=0, column=2)
 
-gumb_generiraj = tk.Button(spodaj, text = "Generiraj geslo", command = novo_geslo_tk).pack()
+gumb_generiraj = tk.Button(spodaj, font = ("TkDefaultFont", 13), text = "Generiraj geslo", command = novo_geslo_tk).pack()
 
 
-gumb_varnost = tk.Button(spodaj, text = "Varnost", command = nova_varnost).pack()
+gumb_varnost = tk.Button(spodaj2, font = ("TkDefaultFont", 11), text = "Varnost", command = nova_varnost).pack()
 
 
 
