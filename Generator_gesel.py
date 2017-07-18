@@ -193,25 +193,25 @@ naslov.pack()
 izbor_zapisa = tk.Frame(okno)
 izbor_zapisa.pack()
 
-kateri_zapis = tk.Label(okno)
+kateri_zapis = tk.Label(okno, bg = "white")
 kateri_zapis.pack()
 osvezi_prikaz_zapisa()
 
 stevilo_znakov = tk.Frame(okno)
 stevilo_znakov.pack()
 
-prikaz_dolzine = tk.Label(okno)
+prikaz_dolzine = tk.Label(okno, bg = "white")
 prikaz_dolzine.pack()
 osvezi_prikaz()
 
 spodaj = tk.Frame(okno)
 spodaj.pack()
 
-izpis = tk.Label(okno)
+izpis = tk.Label(okno, bg = "white", font = ("Courier", 16))
 izpis.pack()
 osvezi_geslo()
 
-prikaz_varnosti_gesla = tk.Label(okno)
+prikaz_varnosti_gesla = tk.Label(okno, fg = "blue")
 prikaz_varnosti_gesla.pack()
 osvezi_varnost()
 
