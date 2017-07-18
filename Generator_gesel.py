@@ -38,35 +38,6 @@ def program_tk():
     #print (generirano_geslo)
     
     
-    if kodir_tk == 0:
-        hack_time = round((10 ** dolz_tk/(2*1000000000)/(3600*24)),1)
-        pass
-            
-    elif kodir_tk == 1:
-        hack_time = round((26 ** dolz_tk/(2*1000000000)/(3600*24)),1)
-        pass
-            
-    elif kodir_tk == 2:
-        hack_time = round((52 ** dolz_tk/(2*1000000000)/(3600*24)),1)
-        pass
-            
-    elif kodir_tk == 3:
-        hack_time = round((62 ** dolz_tk/(2*1000000000)/(3600*24)),1)
-        pass
-    
-    if hack_time < 1000:
-        varnost_gesla_cca = "šibka"
-    else:
-        if hack_time < 10000:
-            varnost_gesla_cca = "zadostna"
-        else:
-            if hack_time < 100000:
-                varnost_gesla_cca = "dobra"
-            else:
-                if hack_time < 1000000:
-                    varnost_gesla_cca = "zelo dobra"
-                else:
-                    varnost_gesla_cca = "odlična"
                 
 
 ####################################################
